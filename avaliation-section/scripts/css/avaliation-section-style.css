@@ -1,0 +1,212 @@
+/* Importando a fonte novecento */
+@import url(https://db.onlinewebfonts.com/c/c2988552206031b82497c4a05a393759?family=Novecento+WideMedium);
+
+@font-face {
+    font-family: "Novecento WideMedium";
+    src: url("https://db.onlinewebfonts.com/t/c2988552206031b82497c4a05a393759.eot");
+    src: url("https://db.onlinewebfonts.com/t/c2988552206031b82497c4a05a393759.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/c2988552206031b82497c4a05a393759.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/c2988552206031b82497c4a05a393759.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/c2988552206031b82497c4a05a393759.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/c2988552206031b82497c4a05a393759.svg#Novecento WideMedium")format("svg");
+}
+
+/* Layout básico */
+body {
+  background: linear-gradient(to right, #11b411, #005200); /* Gradiente aplicado diretamente ao body */
+  font-family: "Novecento WideMedium";
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+  --item-width: 300px;           /* Largura do card */
+  --item-height: 220px;          /* Altura do card */
+  --item-margin: 15px;           /* Espaçamento entre cards */
+  --visible-items: 3;            /* Cards visíveis */
+  --arrow-size: 2rem;            /* Tamanho das setas */
+  --transition-duration: .5s;   /* Duração da transição */
+}
+
+.carousel-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Controles do carrossel */
+.carousel-controls-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Container do carrossel */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: calc(var(--visible-items) * var(--item-width) + (var(--visible-items) - 1) * var(--item-margin));
+  border-radius: 5px;
+}
+
+/* Track do carrossel */
+.carousel-track {
+  display: flex;
+  transition: transform var(--transition-duration) ease-in-out;
+}
+
+/* Card do carrossel */
+.carousel-item {
+  flex: 0 0 var(--item-width);
+  height: var(--item-height);
+  margin-right: var(--item-margin);
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-item:last-child {
+  margin-right: 0;
+}
+
+/* Cabeçalho do card */
+.item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Foto de perfil */
+.profile-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Informações do cliente */
+.client-info {
+  flex-grow: 1;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.client-name {
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+/* Ícone do Google */
+.google-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Seção de avaliação */
+.rating {
+  display: flex;
+  gap: 2px;
+  margin-top: -5px;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: #989898;
+  cursor: default;
+}
+
+.star.rated {
+  color: gold;
+}
+
+/* Container do comentário: altura fixa de 6 linhas (120px), alinhado à esquerda */
+.comment-wrapper {
+  padding: 0 10px 10px;
+  height: 120px; /* 6 linhas com line-height de 20px */
+  line-height: 20px;
+  overflow: hidden;
+  text-align: left;
+  color: #333;
+  background-color: white;
+  position: relative;
+}
+
+/* Conteúdo do comentário */
+.comment-content {
+  height: 100%;
+  overflow: hidden;
+  transition: opacity 0.5s ease-in-out;
+  opacity: 1;
+  font-size: 13px;
+}
+
+.comment-wrapper.expanded .comment-content::-webkit-scrollbar {
+  width: 3px;
+}
+.comment-wrapper.expanded .comment-content::-webkit-scrollbar-thumb {
+  background-color: #666; /* Barra de scroll mais escura */
+  border-radius: 1px;
+}
+.comment-wrapper.expanded .comment-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+.comment-wrapper.expanded .comment-content::-webkit-scrollbar-button {
+  display: none;
+}
+
+/* Link "Leia mais" */
+.read-more {
+  cursor: pointer;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilos personalizados para os botões de seta */
+.carousel-arrow {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.carousel-arrow:hover {
+  transform: scale(1.1);
+}
+
+.carousel-arrow:active {
+  transform: scale(0.9);
+}
+
+.carousel-arrow img {
+  width: 2rem;
+  height: 3.375rem;
+  transition: transform 0.2s ease;
+}
+
+.carousel-arrow.next img {
+  transform: scaleX(-1);
+}
