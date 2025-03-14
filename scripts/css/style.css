@@ -2912,8 +2912,8 @@ footer {
     font-family: "Novecento WideMedium";
     font-size: 2.3rem;         /* Large font size */
     color: white;           /* Green color */
-    margin-top: 3rem;
-    margin-bottom: 2rem;      /* Space below the title */
+    margin-top: 4rem;
+    margin-bottom: 3rem;      /* Space below the title */
     text-align: center;
     background: #00000000;
 }
